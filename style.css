@@ -1,0 +1,213 @@
+:root {
+    --bg-color: #0b0f19;
+    --card-bg: #131c2e;
+    --card-inner: #1e293b;
+    --accent-color: #10b981;
+    --accent-glow: rgba(16, 185, 129, 0.4);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.wrapper {
+    max-width: 750px;
+    width: 100%;
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    border: 1px solid #1e293b;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #1e293b;
+    padding-bottom: 1.5rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
+header p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.visual-display {
+    background: #070a13;
+    height: 220px;
+    border-radius: 14px;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #1e293b;
+}
+
+.device {
+    padding: 1.2rem 2rem;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    z-index: 2;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.printer-box {
+    background: #334155;
+    color: white;
+    border-bottom: 5px solid #1e293b;
+}
+
+.radio-box {
+    background: #d97706;
+    color: white;
+    margin-left: 6rem;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wave {
+    position: absolute;
+    border: 3px solid var(--accent-color);
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    0% { width: 40px; height: 40px; opacity: 1; border-color: var(--accent-color); }
+    50% { border-color: #3b82f6; }
+    100% { width: 320px; height: 320px; opacity: 0; border-color: #ef4444; }
+}
+
+.animate-wave {
+    animation: pulse 1.2s infinite linear;
+}
+
+.audio-status {
+    background: #1e293b;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-left: 4px solid #3b82f6;
+}
+
+.step-content {
+    background: var(--card-inner);
+    padding: 1.5rem;
+    border-radius: 12px;
+    min-height: 160px;
+    margin-bottom: 2rem;
+    border: 1px solid #334155;
+}
+
+.step-number {
+    display: inline-block;
+    background: var(--accent-color);
+    color: #0b0f19;
+    font-weight: bold;
+    padding: 0.25rem 1rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px var(--accent-glow);
+}
+
+.step-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    color: #fff;
+}
+
+.step-desc {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    background: #334155;
+    color: var(--text-main);
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+button:hover:not(:disabled) {
+    background: #475569;
+    transform: translateY(-2px);
+}
+
+button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+button#btn-next {
+    background: var(--accent-color);
+    color: #0b0f19;
+}
+
+button#btn-next:hover:not(:disabled) {
+    background: #059669;
+    box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+button:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.indicator {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: bold;
+    background: #070a13;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+}
